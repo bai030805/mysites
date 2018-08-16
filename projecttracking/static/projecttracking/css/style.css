@@ -1,0 +1,39 @@
+#top {
+    height: 50px;
+    margin: 5px;
+    clear: both;
+}
+
+#menu {
+    width: 120px;
+    height: 200px;
+    float: left;
+    margin: 5px;
+}
+
+#content {
+    float: left;
+    margin: 5px;
+}
+
+ul {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+
+table,table tr th, table tr td {
+    border:1px solid;
+}
+table {
+    min-height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border-collapse: collapse;
+    padding:5px;
+}
+
+span {
+    width: 150px;
+    display: inline-block;
+}

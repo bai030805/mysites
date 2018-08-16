@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>活动列表</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'projecttracking/css/style.css' %}">
+</head>
+<body>
+    <div id="top">
+        <h1>活动清单页</h1>
+    </div>
+    <div id="menu">
+        <ul>
+            <li><a href="/">主页</a></li>
+            <li><a href="/projecttracking/customerlist/">客户列表</a></li>
+            <li><a href="/projecttracking/customeradd/">客户添加</a></li>
+            <li><a href="/projecttracking/projectlist/">项目列表</a></li>
+            <li><a href="/projecttracking/projectadd/">项目添加</a></li>
+            <li><a href="/projecttracking/activitylist/">活动列表</a></li>
+            <li><a href="/projecttracking/activityadd/">活动添加</a></li>
+        </ul>
+    </div>
+    <div id="content">
+        <table>
+            <tr>
+                <th>序号</th>
+                <th>客户名称</th>
+                <th>项目名称</th>
+                <th>活动内容</th>
+                <th>下一步工作</th>
+            </tr>
+            {% for record in activity_list %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ record.customer_id.customer }}</td>
+                <td>{{ record.project_id.project }}</td>
+                <td>{{ record.activity_content }}</td>
+                <td>{{ record.next_step }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+
+</body>
+</html>

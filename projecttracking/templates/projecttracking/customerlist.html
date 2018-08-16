@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>客户清单</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'projecttracking/css/style.css' %}">
+</head>
+<body>
+
+<div>
+    <div id="top">
+        <h1>客户清单页</h1>
+    </div>
+    <div id="menu">
+        <ul>
+            <li><a href="/">主页</a></li>
+            <li><a href="/projecttracking/customerlist/">客户列表</a></li>
+            <li><a href="/projecttracking/customeradd/">客户添加</a></li>
+            <li><a href="/projecttracking/projectlist/">项目列表</a></li>
+            <li><a href="/projecttracking/projectadd/">项目添加</a></li>
+            <li><a href="/projecttracking/activitylist/">活动列表</a></li>
+            <li><a href="/projecttracking/activityadd/">活动添加</a></li>
+        </ul>
+    </div>
+    <div id="content">
+        <table>
+            <tr>
+                <th>序号</th>
+                <th>客户名称</th>
+                <th>ASE</th>
+                <th>ASE Manager</th>
+                <th>DCSE</th>
+                <th>DCSE_Manager</th>
+                <th>UDS Sales</th>
+            </tr>
+            {% for record in customer_list %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ record.customer }}</td>
+                <td>{{ record.ase }}</td>
+                <td>{{ record.ase_manager }}</td>
+                <td>{{ record.dcse }}</td>
+                <td>{{ record.dcse_manager }}</td>
+                <td>{{ record.uds_sales }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>项目活动</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'projecttracking/css/style.css' %}">
+</head>
+<body>
+    <div id="top">
+        <h1>项目活动清单页</h1>
+    </div>
+    <div id="menu">
+        <ul>
+            <li><a href="/">主页</a></li>
+            <li><a href="/projecttracking/customerlist/">客户列表</a></li>
+            <li><a href="/projecttracking/customeradd/">客户添加</a></li>
+            <li><a href="/projecttracking/projectlist/">项目列表</a></li>
+            <li><a href="/projecttracking/projectadd/">项目添加</a></li>
+            <li><a href="/projecttracking/activitylist/">活动列表</a></li>
+            <li><a href="/projecttracking/activityadd/">活动添加</a></li>
+        </ul>
+    </div>
+    <div id="content">
+        <h2>项目名称</h2>
+        <table>
+            <tr>
+                <th>项目名称</th>
+                <th>客户名称</th>
+                <th>下单时间</th>
+                <th>解决方案</th>
+                <th>项目金额</th>
+                <th>当前状态</th>
+            </tr>
+            <tr>
+                <td>{{ requested_project.project }}</td>
+                <td>{{ requested_project.customer_id.customer }}</td>
+                <td>{{ requested_project.target_date }}</td>
+                <td>{{ requested_project.solution }}</td>
+                <td>{{ requested_project.revenue }}</td>
+                <td>{{ requested_project.status }}</td>
+            </tr>
+        </table>
+        <h2>活动列表</h2>
+        <table>
+            <tr>
+                <th>序号</th>
+                <th>客户名称</th>
+                <th>项目名称</th>
+                <th>活动内容</th>
+                <th>下一步工作</th>
+                <th>项目状态</th>
+                <th>更新时间</th>
+            </tr>
+            {% for record in activity_list %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ record.customer_id.customer }}</td>
+                <td>{{ record.project_id.project }}</td>
+                <td>{{ record.activity_content }}</td>
+                <td>{{ record.next_step }}</td>
+                <td>{{ record.project_status }}</td>
+                <td>{{ record.update_date }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <h2>添加活动</h2>
+        <form action="/projecttracking/projectactivities/?id={{ requested_project.id }}" method="POST">
+            <p><span>活动内容</span><textarea name="activity_content" ></textarea></p>
+            <p><span>下一步计划</span><textarea name="next_step" ></textarea></p>
+            <p><span>项目状态</span><textarea name="project_status" ></textarea></p>
+            <p><input type="submit" value="添加"></p>
+        </form>
+    </div>
+
+
+
+</body>
+</html>
