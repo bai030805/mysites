@@ -7,6 +7,5 @@ urlpatterns = [
     path('projectlist/', views.project_list),
     path('projectadd/', views.project_add),
     path('projectactivities/', views.project_activities),
-#    path('activitylist/', views.activity_list),
-#    path('activityadd/', views.activity_add),
+
 ]

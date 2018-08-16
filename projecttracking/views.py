@@ -76,25 +76,3 @@ def project_activities(request):
         return render(request, 'projectactivities.html', {"requested_project":requested_project, "activity_list": related_activities})
 
 
-def activity_list(request):
-    activities = models.Activities.objects.all()
-    return render(request, 'activitylist.html', {"activity_list":activities})
-
-def activity_add(request):
-    customers = models.Customers.objects.all()
-    projects = models.Projects.objects.all()
-    if request.method == "POST":
-        project_id_added = models.Projects.objects.get(id=request.POST.get("projects", None))
-        customer_id_added = models.Customers.objects.get(id=request.POST.get("customers", None))
-        activity_content_added = request.POST.get("activity_content", None)
-        next_step_add = request.POST.get("next_step", None)
-
-        models.Activities.objects.create(
-            customer_id=customer_id_added,
-            project_id = project_id_added,
-            activity_content = activity_content_added,
-            next_step = next_step_add,
-        )
-        return render(request, 'activityadd.html',{"customer_list": customers,"project_list":projects})
-    else:
-        return render(request, 'activityadd.html',{"customer_list": customers,"project_list":projects})
