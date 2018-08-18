@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>客户添加</title>
+    <title>客户编辑</title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'projecttracking/css/style.css' %}">
     <script type="text/javascript" src="{% static 'projecttracking/js/external.js' %}"></script>
 </head>
 <body>
     <div id="top">
-        <h1>客户添加页</h1>
+        <h1>客户编辑页</h1>
     </div>
     <div id="menu">
         <ul>
@@ -21,16 +21,9 @@
         </ul>
     </div>
     <div id="content">
-        <form action="/projecttracking/customeradd/" method="POST">
-            <p><span>客户名称</span><input id="customer" type="text" name="customer"  required /></p>
-            <p><span>ASE</span><input id="ase" type="text" name="ase"  /></p>
-            <p><span>ASE Manager</span><input id="ase_manager" type="text" name="ase_manager"   /></p>
-            <p><span>DCSE</span><input id="dcse" type="text" name="dcse"  /></p>
-            <p><span>DCSE Manager</span><input id="dcse_manager" type="text" name="dcse_manager"   /></p>
-            <p><span>UDS Sales</span><input id="uds_sales" type="text" name="uds_sales"  /></p>
-            <p><input type="submit" value="添加"></p>
-        </form>
+
     </div>
+
 
 </body>
 </html>

@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from projecttracking import models
-import datetime
 from django.utils import timezone
 
 # Create your views here.
@@ -54,10 +53,6 @@ def project_add(request):
 
         return render(request, 'projectadd.html', {"customer_list": customers})
 
-
-
-
-
 def project_activities(request):
     requested_project_id = request.GET.get("id")
     related_activities = models.Activities.objects.filter(project_id=requested_project_id).order_by("update_date")
@@ -82,5 +77,11 @@ def project_activities(request):
     else:
         requested_project = models.Projects.objects.get(id=requested_project_id)
         return render(request, 'projectactivities.html', {"requested_project":requested_project, "activity_list": related_activities})
+
+def customer_edit(request):
+    pass
+
+def project_edit(request):
+    pass
 
 

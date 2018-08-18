@@ -18,6 +18,8 @@ body{
 #content {
     float: left;
     width: 70%;
+    border-left: seagreen solid 1px;
+    padding-left: 10px;
 
 }
 
@@ -52,7 +54,6 @@ table {
     text-align: left;
     padding-left: 10px;
 }
-
 
 span {
     width: 150px;
