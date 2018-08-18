@@ -37,9 +37,17 @@ def project_add(request):
     if request.method == "POST":
         project_added = request.POST.get("project", None)
         customer_id_added = models.Customers.objects.get(id=request.POST.get("customers", None))
+        target_date_added = request.POST.get("target_date", None)
+        solution_added = request.POST.get("solution", None)
+        revenue_added = request.POST.get("revenue", None)
+        status_added = request.POST.get("status", None)
         models.Projects.objects.create(
             project=project_added,
-            customer_id=customer_id_added
+            customer_id=customer_id_added,
+            target_date = target_date_added,
+            solution = solution_added,
+            revenue = revenue_added,
+            status = status_added,
         )
         return render(request, 'projectadd.html', {"customer_list": customers})
     else:

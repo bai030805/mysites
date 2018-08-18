@@ -22,13 +22,8 @@
 
     <div id="content">
         <form action="/projecttracking/projectadd/" method="POST">
-            <p>
-                <span>项目名称</span>
-                <input id="project" type="text" name="project"  required />
-            </p>
-            <p>
-                <span>客户名称</span>
-                <select name="customers" >
+            <p><span>项目名称</span><input id="project" type="text" name="project" required /></p>
+            <p><span>客户名称</span><select name="customers" >
                     {% for record in customer_list %}
                         <option value="{{ record.id }}"> {{ record.customer}} </option>
                     {% endfor %}
