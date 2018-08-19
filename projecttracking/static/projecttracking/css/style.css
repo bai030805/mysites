@@ -25,7 +25,6 @@ body{
 
 #activitylist{
     border-top: solid 1px;
-
     padding: 10px;
 }
 
@@ -35,6 +34,15 @@ ul {
     padding:0;
 }
 
+
+
+/*
+table,table tr th, table tr td {
+    border:1px solid;
+    word-wrap: break-word;
+    font-size: 14px;
+}
+*/
 table {
     width: 100%;
     table-layout:fixed;
@@ -44,34 +52,32 @@ table {
     border-collapse: collapse;
     padding:2px;
 }
-
-/*
-table,table tr th, table tr td {
-    border:1px solid;
-    word-wrap: break-word;
-    font-size: 14px;
-}
-*/
-
 table tr th {
     border:1px solid;
     word-wrap: break-word;
     font-size: 14px;
 }
-a{
-    text-decoration:none;
-
-}
-
 table tr td {
     border:1px solid;
     word-wrap: break-word;
-    font-size: 12px;
+    font-size: 14px;
 }
-
 #td_longcontent{
     text-align: left;
     padding-left: 10px;
+}
+
+#thin_td{
+    width: 40px;
+}
+
+#normal_td{
+    width: 80px;
+
+}
+
+a{
+    text-decoration:none;
 }
 
 span {
