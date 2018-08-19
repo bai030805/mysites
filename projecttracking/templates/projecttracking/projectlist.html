@@ -28,8 +28,9 @@
                 <th>客户名称</th>
                 <th>下单时间</th>
                 <th>解决方案</th>
-                <th>项目金额(k$)</th>
+                <th>金额(k$)</th>
                 <th>当前状态</th>
+                <th>操作</th>
             </tr>
             {% for record in project_list %}
             <tr>
@@ -42,6 +43,7 @@
                 <td>{{ record.solution }}</td>
                 <td>{{ record.revenue }}</td>
                 <td>{{ record.status }}</td>
+                <td><a href="/projecttracking/projectedit/?id={{ record.id }}">编辑</a></td>
             </tr>
             {% endfor %}
         </table>

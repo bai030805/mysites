@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="top">
-        <h1>项目活动清单页</h1>
+        <h1>项目更新清单页</h1>
     </div>
     <div id="menu">
         <ul>
@@ -43,7 +43,7 @@
             </table>
         </div>
         <div>
-            <h2>活动列表</h2>
+            <h2>项目更新历史</h2>
             {% for record in activity_list %}
             <div id="activitylist">
                 <table>
@@ -62,7 +62,7 @@
                         <td>{{ record.update_date }}</td>
                     </tr>
                     <tr>
-                        <td>活动内容</td>
+                        <td>更新活动</td>
                         <td colspan="4" id="td_longcontent">{{ record.activity_content }}</td>
                     </tr>
                     <tr>
@@ -74,9 +74,9 @@
             {% endfor %}
         </div>
         <div>
-            <h2>添加活动</h2>
+            <h2>添加更新活动</h2>
             <form action="/projecttracking/projectactivities/?id={{ requested_project.id }}" method="POST">
-                <p><span>活动内容</span></p>
+                <p><span>更新活动</span></p>
                 <p><textarea name="activity_content"  onkeyup="new do_resize(this);" ></textarea></p>
                 <p><span>下一步工作</span></p>
                 <p><textarea name="next_step" onkeyup="new do_resize(this);" ></textarea></p>

@@ -17,7 +17,7 @@ body{
 
 #content {
     float: left;
-    width: 70%;
+    width: 90%;
     border-left: seagreen solid 1px;
     padding-left: 10px;
 
@@ -35,11 +35,6 @@ ul {
     padding:0;
 }
 
-table,table tr th, table tr td {
-    border:1px solid;
-    word-wrap: break-word;
-
-}
 table {
     width: 100%;
     table-layout:fixed;
@@ -47,7 +42,31 @@ table {
     line-height: 25px;
     text-align: center;
     border-collapse: collapse;
-    padding:5px;
+    padding:2px;
+}
+
+/*
+table,table tr th, table tr td {
+    border:1px solid;
+    word-wrap: break-word;
+    font-size: 14px;
+}
+*/
+
+table tr th {
+    border:1px solid;
+    word-wrap: break-word;
+    font-size: 14px;
+}
+a{
+    text-decoration:none;
+
+}
+
+table tr td {
+    border:1px solid;
+    word-wrap: break-word;
+    font-size: 12px;
 }
 
 #td_longcontent{

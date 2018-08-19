@@ -32,6 +32,7 @@
                 <th>DCSE</th>
                 <th>DCSE Manager</th>
                 <th>UDS Sales</th>
+                <th>操作</th>
             </tr>
             {% for record in customer_list %}
             <tr>
@@ -42,6 +43,7 @@
                 <td>{{ record.dcse }}</td>
                 <td>{{ record.dcse_manager }}</td>
                 <td>{{ record.uds_sales }}</td>
+                <td><a href = "/projecttracking/customeredit/?id={{ record.id }}">编辑</a></td>
             </tr>
             {% endfor %}
         </table>

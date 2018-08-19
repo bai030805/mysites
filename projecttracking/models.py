@@ -15,6 +15,8 @@ class Projects(models.Model):
     project = models.CharField(max_length=64, null=False, unique=False)
     customer_id = models.ForeignKey(to="Customers", on_delete=None)
     solution = models.CharField(max_length=64, null=True, unique=False)
+    capacity = models.IntegerField(null=True,)
+    competition = models.CharField(max_length=64, null=True, unique=False)
     revenue = models.IntegerField(null=True)
     target_date = models.CharField(max_length=64, null=True, unique=False)
     status = models.CharField(max_length=64, null=True, unique=False)

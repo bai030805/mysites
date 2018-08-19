@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>项目编辑</title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'projecttracking/css/style.css' %}">
     <script type="text/javascript" src="{% static 'projecttracking/js/external.js' %}"></script>
 </head>
 <body>
     <div id="top">
-        <h1>客户编辑页</h1>
+        <h1>项目编辑页</h1>
     </div>
     <div id="menu">
         <ul>
@@ -21,7 +21,15 @@
         </ul>
     </div>
     <div id="content">
-
+        <form action="/projecttracking/projectedit/?id={{ record.id }}" method="POST">
+            <p><span>项目名称</span><input name="project" type="text"  value="{{ record.project }}" required /></p>
+            <p><span>客户名称</span>{{ record.customer_id.customer }}</p>
+            <p><span>解决方案</span><input name="solution" type="text" value="{{ record.solution }}" /></p>
+            <p><span>存储容量</span><input name="capacity" type="text" value="{{ record.capacity }}" required /></p>
+            <p><span>金额(K$)</span><input name="revenue" type="text" value="{{ record.revenue }}" required /></p>
+            <p><span>下单时间</span>{{ record.target_date }}</p>
+            <p><input type="submit" value="更新" /></p>
+        </form>
     </div>
 
 </body>

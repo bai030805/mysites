@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from projecttracking import models
 from django.utils import timezone
 
@@ -37,9 +37,11 @@ def project_add(request):
         project_added = request.POST.get("project", None)
         customer_id_added = models.Customers.objects.get(id=request.POST.get("customers", None))
         target_date_added = request.POST.get("target_date", None)
+        capacity_added = request.POST.get("capacity", None)
         solution_added = request.POST.get("solution", None)
         revenue_added = request.POST.get("revenue", None)
         status_added = request.POST.get("status", None)
+        competition_added = request.POST.get("competition", None)
         models.Projects.objects.create(
             project=project_added,
             customer_id=customer_id_added,
@@ -47,6 +49,8 @@ def project_add(request):
             solution = solution_added,
             revenue = revenue_added,
             status = status_added,
+            capacity = capacity_added,
+            competition = competition_added
         )
         return render(request, 'projectadd.html', {"customer_list": customers})
     else:
@@ -79,9 +83,45 @@ def project_activities(request):
         return render(request, 'projectactivities.html', {"requested_project":requested_project, "activity_list": related_activities})
 
 def customer_edit(request):
-    pass
+    requested_id = request.GET.get("id")
+    if request.method == "POST":
+        customer_updated = request.POST.get("customer", None)
+        ase_updated = request.POST.get("ase", None)
+        ase_manager_updated = request.POST.get("ase_manager", None)
+        dcse_updated = request.POST.get("dcse", None)
+        dcse_manager_updated = request.POST.get("dcse_manager", None)
+        uds_sales_updated = request.POST.get("uds_sales", None)
+        models.Customers.objects.filter(id=requested_id).update(
+            customer=customer_updated,
+            ase=ase_updated,
+            ase_manager=ase_manager_updated,
+            dcse=dcse_updated,
+            dcse_manager=dcse_manager_updated,
+            uds_sales=uds_sales_updated,
+        )
+        return redirect("/projecttracking/customerlist/")
+
+    else:
+        customer = models.Customers.objects.get(id=requested_id)
+        return render(request, 'customeredit.html', {"record":customer})
 
 def project_edit(request):
-    pass
+    requested_id = request.GET.get("id")
+    if request.method == "POST":
+        project_updated = request.POST.get("project", None)
+        solution_updated = request.POST.get("solution", None)
+        capacity_updated = request.POST.get("capacity", '0')
+        revenue_updated = request.POST.get("revenue", '0')
+        target_date_updated = request.POST.get("target_date", None)
+        models.Projects.objects.filter(id=requested_id).update(
+            project=project_updated,
+            solution=solution_updated,
+            capacity=capacity_updated,
+            revenue=revenue_updated,
+        )
+        return redirect("/projecttracking/projectlist/")
+    else:
+        project= models.Projects.objects.get(id=requested_id)
+        return render(request, 'projectedit.html', {"record":project})
 
 
