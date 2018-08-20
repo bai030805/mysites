@@ -27,10 +27,11 @@
             <tr>
                 <th id="thin_td">序号</th>
                 <th>客户名称</th>
-                <th>ASE</th>
+                <th>SalesDivision</th>
+                <th >SalesTeam</th>
+                <th id="normal_td">ASE</th>
                 <th>ASE Manager</th>
                 <th>DCSE</th>
-                <th>DCSE Manager</th>
                 <th>UDS Sales</th>
                 <th id="thin_td">操作</th>
             </tr>
@@ -38,10 +39,11 @@
             <tr>
                 <td>{{ forloop.counter }}</td>
                 <td>{{ record.customer }}</td>
+                <td>{{ record.sales_division }}</td>
+                <td>{{ record.sales_team }}</td>
                 <td>{{ record.ase }}</td>
                 <td>{{ record.ase_manager }}</td>
                 <td>{{ record.dcse }}</td>
-                <td>{{ record.dcse_manager }}</td>
                 <td>{{ record.uds_sales }}</td>
                 <td><a href = "/projecttracking/customeredit/?id={{ record.id }}">编辑</a></td>
             </tr>

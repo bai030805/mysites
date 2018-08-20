@@ -27,10 +27,9 @@
             <p><span>解决方案</span><input name="solution" type="text" value="{{ record.solution }}" /></p>
             <p><span>存储容量</span><input name="capacity" type="text" value="{{ record.capacity }}" required /></p>
             <p><span>金额(K$)</span><input name="revenue" type="text" value="{{ record.revenue }}" required /></p>
-            <p><span>下单时间</span>{{ record.target_date }}</p>
+            <p><span>下单时间</span><input name="target_date" type="text" value="{{ record.target_date }}" required /></p>
             <p><input type="submit" value="更新" /></p>
         </form>
     </div>
-
 </body>
 </html>

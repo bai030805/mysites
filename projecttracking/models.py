@@ -9,6 +9,8 @@ class Customers(models.Model):
     dcse = models.CharField(max_length=64, null=True, unique=False)
     dcse_manager = models.CharField(max_length=64, null=True, unique=False)
     uds_sales = models.CharField(max_length=64, null=True, unique=False)
+    sales_division = models.CharField(max_length=64, null=True, unique=False)
+    sales_team = models.CharField(max_length=64, null=True, unique=False)
 
 class Projects(models.Model):
     id = models.AutoField(primary_key=True),  # 自增的ID主键

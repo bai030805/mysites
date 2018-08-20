@@ -23,11 +23,12 @@
     <div id="content">
         <form action="/projecttracking/customeredit/?id={{ record.id }}" method="POST">
             <p><span>客户名称</span><input id="customer" type="text" name="customer"  value="{{ record.customer }}" required /></p>
+            <p><span>Sales Division</span><input id="sales_division" type="text" name="sales_division"  value="{{ record.sales_division }}"/></p>
+            <p><span>Sales Team</span><input id="sales_team" type="text" name="sales_team"  value="{{ record.sales_team }}"/></p>
             <p><span>ASE</span><input id="ase" type="text" name="ase"  value="{{ record.ase }}"/></p>
             <p><span>ASE Manager</span><input id="ase_manager" type="text" name="ase_manager"  value="{{ record.ase_manager }}" /></p>
             <p><span>DCSE</span><input id="dcse" type="text" name="dcse"  value="{{ record.dcse }}" /></p>
-            <p><span>DCSE Manager</span><input id="dcse_manager" type="text" name="dcse_manager" value="{{ record.dcse_manager }}"   /></p>
-            <p><span>UDS Sales</span><input id="uds_sales" type="text" name="uds_sales"  value="{{ uds_sales }}" /></p>
+            <p><span>UDS Sales</span><input id="uds_sales" type="text" name="uds_sales"  value="{{ record.uds_sales }}" /></p>
             <p><input type="submit" value="更新"></p>
         </form>
     </div>

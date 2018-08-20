@@ -8,24 +8,26 @@ def customer_list(request):
     return render(request, 'customerlist.html', {"customer_list":customers})
 
 def project_list(request):
-    projects = models.Projects.objects.all()
+    projects = models.Projects.objects.all().order_by("target_date")
     return render(request, 'projectlist.html', {"project_list":projects} )
 
 def customer_add(request):
     if request.method == "POST":
         customer_added = request.POST.get("customer", None)
+        sales_division_added = request.POST.get("sales_division",None)
+        sales_team_added = request.POST.get("sales_team", None)
         ase_added = request.POST.get("ase", None)
         ase_manager_added = request.POST.get("ase_manager", None)
         dcse_added = request.POST.get("dcse", None)
-        dcse_manager_added = request.POST.get("dcse_manager", None)
         uds_sales_added = request.POST.get("uds_sales", None)
         models.Customers.objects.create(
             customer = customer_added,
             ase = ase_added,
             ase_manager = ase_manager_added,
             dcse = dcse_added,
-            dcse_manager = dcse_manager_added,
             uds_sales = uds_sales_added,
+            sales_division = sales_division_added,
+            sales_team = sales_team_added,
         )
         return render(request, 'customeradd.html')
     else:
@@ -86,18 +88,20 @@ def customer_edit(request):
     requested_id = request.GET.get("id")
     if request.method == "POST":
         customer_updated = request.POST.get("customer", None)
+        sales_division_updated = request.POST.get("sales_division",None)
+        sales_team_updated = request.POST.get("sales_team", None)
         ase_updated = request.POST.get("ase", None)
         ase_manager_updated = request.POST.get("ase_manager", None)
         dcse_updated = request.POST.get("dcse", None)
-        dcse_manager_updated = request.POST.get("dcse_manager", None)
         uds_sales_updated = request.POST.get("uds_sales", None)
         models.Customers.objects.filter(id=requested_id).update(
             customer=customer_updated,
             ase=ase_updated,
             ase_manager=ase_manager_updated,
             dcse=dcse_updated,
-            dcse_manager=dcse_manager_updated,
             uds_sales=uds_sales_updated,
+            sales_division=sales_division_updated,
+            sales_team=sales_team_updated,
         )
         return redirect("/projecttracking/customerlist/")
 
@@ -118,6 +122,7 @@ def project_edit(request):
             solution=solution_updated,
             capacity=capacity_updated,
             revenue=revenue_updated,
+            target_date=target_date_updated,
         )
         return redirect("/projecttracking/projectlist/")
     else:
