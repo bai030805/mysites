@@ -28,6 +28,12 @@ body{
     padding: 10px;
 }
 
+#bottom {
+    min-height: 30px;
+    width: 100%;
+    clear: both;
+}
+
 ul {
     list-style-type:none;
     margin:0;
