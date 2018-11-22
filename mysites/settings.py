@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'mysites',
     'projecttracking',
+    'storagematrix',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +58,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'templates'),
-                 os.path.join(BASE_DIR, 'projecttracking/templates/projecttracking/')
+                 os.path.join(BASE_DIR, 'projecttracking/templates/projecttracking/'),
+                 os.path.join(BASE_DIR, 'storagematrix/templates/storagematrix/'),
                  ]
         ,
         'APP_DIRS': True,
@@ -134,5 +137,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
 			os.path.join(BASE_DIR, "static"),
-            os.path.join(BASE_DIR, "projecttracking/static")
+            os.path.join(BASE_DIR, "projecttracking/static"),
+            os.path.join(BASE_DIR, "storagematrix/static"),
 		]

@@ -27,7 +27,8 @@
                 <th>项目名称</th>
                 <th>客户名称</th>
                 <th id="normal_td">下单时间</th>
-                <th>解决方案</th>
+                <th id="normal_td">解决方案</th>
+                <th id="normal_td">容量(TB)</th>
                 <th id="normal_td">金额(k$)</th>
                 <th>当前状态</th>
                 <th id="normal_td">操作</th>
@@ -41,6 +42,7 @@
                 <td>{{ record.customer_id.customer }}</td>
                 <td>{{ record.target_date }}</td>
                 <td>{{ record.solution }}</td>
+                <td>{{ record.capacity }}</td>
                 <td>{{ record.revenue }}</td>
                 <td>{{ record.status }}</td>
                 <td><a href="/projecttracking/projectedit/?id={{ record.id }}">编辑</a></td>
