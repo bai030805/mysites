@@ -2,9 +2,181 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>test1</title>
+    <title>对象存储比较</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
 </head>
 <body>
-object111
+
+<div>
+    <div id="top">
+        <h1>对象存储比较</h1>
+    </div>
+    <div id="menu">
+        <ul>
+            <li><a href="/">主页</a></li>
+            <li><a href="/projecttracking/customerlist/">客户列表</a></li>
+            <li><a href="/projecttracking/customeradd/">客户添加</a></li>
+            <li><a href="/projecttracking/projectlist/">项目列表</a></li>
+            <li><a href="/projecttracking/projectadd/">项目添加</a></li>
+            <li><a href="/storagematrix/objectstorage">对象存储比较</a></li>
+        </ul>
+    </div>
+    <div id="content">
+        <table>
+
+        <!--Object Storage General-->
+            <tr>
+                <th>厂商</th>
+                {% for record in ObjectstorageGeneral %}
+                <th>{{ record.vendor }}</th>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>名称</th>
+                {% for record in ObjectstorageGeneral %}
+                <th>{{ record.product_name }}</th>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>软件版本</th>
+                {% for record in ObjectstorageGeneral %}
+                <td>{{ record.software_version }}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>部署选项</th>
+                {% for record in ObjectstorageGeneral %}
+                <td>{{ record.deployment_option }}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>节点类型</th>
+                {% for record in ObjectstorageGeneral %}
+                <td>{{ record.node_type }}</td>
+                {% endfor %}
+            </tr>
+
+        <!--Object Storage Interface-->
+            <tr>
+                <th>S3</th>
+                {% for record in ObjectstorageInterface %}
+                <td>{{ record.s3 }}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>Swift</th>
+                {% for record in ObjectstorageInterface %}
+                <td>{{ record.swift }}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>NFS</th>
+                {% for record in ObjectstorageInterface %}
+                <td>{{ record.nfs }}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>CIFS</th>
+                {% for record in ObjectstorageInterface %}
+                <td>{{ record.cifs }}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>HDFS</th>
+                {% for record in ObjectstorageInterface %}
+                <td>{{ record.hdfs }}</td>
+                {% endfor %}
+            </tr>
+
+        <!--Object Storage Scalability-->
+            <tr>
+                <th>最大容量每集群</th>
+                {% for record in ObjectstorageScalability %}
+                <td>{{ record.max_capacity_per_cluster }}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>最大节点数每集群</th>
+                {% for record in ObjectstorageScalability %}
+                <td>{{ record.max_nodes_per_cluster }}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>最大桶数每集群</th>
+                {% for record in ObjectstorageScalability %}
+                <td>{{ record.max_buckets_per_cluster }}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>最大对象数每集群</th>
+                {% for record in ObjectstorageScalability %}
+                <td>{{ record.max_objects_per_cluster }}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>最大容量每桶</th>
+                {% for record in ObjectstorageScalability %}
+                <td>{{ record.max_capacity_per_bucket }}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>最大对象数每桶</th>
+                {% for record in ObjectstorageScalability %}
+                <td>{{ record.max_objects_per_bucket }}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>最大对象数每节点</th>
+                {% for record in ObjectstorageScalability %}
+                <td>{{ record.max_objects_per_node }}</td>
+                {% endfor %}
+            </tr>
+
+        <!--Object Storage Data Availability-->
+            <tr>
+                <th>纠删码</th>
+                {% for record in ObjectstorageDataAvailability %}
+                <td>{{ record.erasure_code }}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>多份拷贝</th>
+                {% for record in ObjectstorageDataAvailability %}
+                <td>{{ record.multi_copy }}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>磁盘故障</th>
+                {% for record in ObjectstorageDataAvailability %}
+                <td>{{ record.disk_failure }}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>节点故障</th>
+                {% for record in ObjectstorageDataAvailability %}
+                <td>{{ record.node_failure }}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>机柜故障</th>
+                {% for record in ObjectstorageDataAvailability %}
+                <td>{{ record.rack_failure }}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>站点故障</th>
+                {% for record in ObjectstorageDataAvailability %}
+                <td>{{ record.site_failure }}</td>
+                {% endfor %}
+            </tr>
+
+
+
+        </table>
+    </div>
+    <div id="bottom"></div>
+</div>
+
 </body>
 </html>
