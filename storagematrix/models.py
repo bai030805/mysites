@@ -51,7 +51,7 @@ class ObjectstorageDataService(models.Model):
     worm = models.CharField(max_length=64, null=True, unique=False)
     versioning = models.CharField(max_length=64, null=True, unique=False)
     metadatasearch = models.CharField(max_length=64, null=True, unique=False)
-    multi_sites = models.CharField(max_length=64, null=True, unique=False)
+    multi_sites_access = models.CharField(max_length=64, null=True, unique=False)
     cross_interface_access = models.CharField(max_length=64, null=True, unique=False)
     multi_sites_distribution = models.CharField(max_length=64, null=True, unique=False)
     access_load_balance = models.CharField(max_length=64, null=True, unique=False)
