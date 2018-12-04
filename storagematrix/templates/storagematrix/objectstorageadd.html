@@ -8,6 +8,94 @@
 </head>
 <body>
 
+    <div id="top">
+        <h1>客户添加页</h1>
+    </div>
+    <div id="menu">
+        <ul>
+            <li><a href="/">主页</a></li>
+            <li><a href="/projecttracking/customerlist/">客户列表</a></li>
+            <li><a href="/projecttracking/customeradd/">客户添加</a></li>
+            <li><a href="/projecttracking/projectlist/">项目列表</a></li>
+            <li><a href="/projecttracking/projectadd/">项目添加</a></li>
+        </ul>
+    </div>
+    <div id="content">
+        <form action="/storagematrix/objectstorageadd/" method="POST">
+
+        <!--Object Storage General-->
+            <p><span>名称</span><input id="customer" type="text" name="customer"  required /></p>
+            <p><span>厂商</span><input id="sales_division" type="text" name="sales_division"  /></p>
+            <p><span>软件版本</span><input id="sales_team" type="text" name="sales_team" /></p>
+            <p><span>部署选项</span><input id="ase" type="text" name="ase"  /></p>
+            <p><span>节点类型</span><input id="ase_manager" type="text" name="ase_manager" /></p>
+
+        <!--Object Storage Interface-->
+            <p><span>S3</span><input id="customer" type="text" name="customer"  required /></p>
+            <p><span>Swift</span><input id="sales_division" type="text" name="sales_division"  /></p>
+            <p><span>NFS</span><input id="sales_team" type="text" name="sales_team" /></p>
+            <p><span>CIFS</span><input id="ase" type="text" name="ase"  /></p>
+            <p><span>HDFS</span><input id="ase_manager" type="text" name="ase_manager" /></p>
+
+        <!--Object Storage Scalability-->
+            <p><span>最大容量每集群</span><input id="customer" type="text" name="customer"  required /></p>
+            <p><span>最大节点数每集群</span><input id="sales_division" type="text" name="sales_division"  /></p>
+            <p><span>最大桶数每集群</span><input id="sales_team" type="text" name="sales_team" /></p>
+            <p><span>最大对象数每集群</span><input id="ase" type="text" name="ase"  /></p>
+            <p><span>最大容量每桶</span><input id="ase_manager" type="text" name="ase_manager" /></p>
+            <p><span>最大对象数每集群</span><input id="ase" type="text" name="ase"  /></p>
+            <p><span>最大容量每桶</span><input id="ase_manager" type="text" name="ase_manager" /></p>
+            <p><span>最大对象数每节点</span><input id="ase_manager" type="text" name="ase_manager" /></p>
+
+        <!--Object Storage Data Availability-->
+            <p><span>纠删码</span><input id="customer" type="text" name="customer"  required /></p>
+            <p><span>多份拷贝</span><input id="sales_division" type="text" name="sales_division"  /></p>
+            <p><span>磁盘故障</span><input id="sales_team" type="text" name="sales_team" /></p>
+            <p><span>节点故障</span><input id="ase" type="text" name="ase"  /></p>
+            <p><span>机柜故障</span><input id="ase_manager" type="text" name="ase_manager" /></p>
+            <p><span>站点故障</span><input id="ase" type="text" name="ase"  /></p>
+
+        <!--Object Storage Data Service-->
+            <p><span>重删</span><input id="customer" type="text" name="customer"  required /></p>
+            <p><span>压缩</span><input id="sales_division" type="text" name="sales_division"  /></p>
+            <p><span>分层到云</span><input id="sales_team" type="text" name="sales_team" /></p>
+            <p><span>自动分层</span><input id="ase" type="text" name="ase"  /></p>
+            <p><span>WORM</span><input id="ase_manager" type="text" name="ase_manager" /></p>
+            <p><span>多版本</span><input id="ase" type="text" name="ase"  /></p>
+            <p><span>元数据搜索</span><input id="customer" type="text" name="customer"  required /></p>
+            <p><span>多站点访问</span><input id="sales_division" type="text" name="sales_division"  /></p>
+            <p><span>跨接口访问</span><input id="sales_team" type="text" name="sales_team" /></p>
+            <p><span>多站点分发</span><input id="ase" type="text" name="ase"  /></p>
+            <p><span>负载均衡</span><input id="ase_manager" type="text" name="ase_manager" /></p>
+
+        <!--Object Storage Access Security-->
+            <p><span>访问控制列表</span><input id="sales_team" type="text" name="sales_team" /></p>
+            <p><span>桶策略</span><input id="ase" type="text" name="ase"  /></p>
+            <p><span>用户策略</span><input id="ase_manager" type="text" name="ase_manager" /></p>
+
+        <!--Object Storage Operation-->
+            <p><span>安装过程</span><input id="ase" type="text" name="ase"  /></p>
+            <p><span>性能监控</span><input id="customer" type="text" name="customer"  required /></p>
+            <p><span>容量监控</span><input id="sales_division" type="text" name="sales_division"  /></p>
+            <p><span>故障告警</span><input id="sales_team" type="text" name="sales_team" /></p>
+            <p><span>审计日志</span><input id="ase" type="text" name="ase"  /></p>
+            <p><span>数据访问日志</span><input id="ase_manager" type="text" name="ase_manager" /></p>
+
+        <!--Object Storage Hardware Spec-->
+            <p><span>CPU</span><input id="ase" type="text" name="ase"  /></p>
+            <p><span>内存</span><input id="customer" type="text" name="customer"  required /></p>
+            <p><span>磁盘</span><input id="sales_division" type="text" name="sales_division"  /></p>
+            <p><span>网络</span><input id="sales_team" type="text" name="sales_team" /></p>
+
+        <!--Object Storage Ecosystem-->
+            <p><span>Isilon</span><input id="ase" type="text" name="ase"  /></p>
+            <p><span>Datadomain</span><input id="customer" type="text" name="customer"  required /></p>
+            <p><span>NBU</span><input id="sales_division" type="text" name="sales_division"  /></p>
+
+            <p><input type="submit" value="添加"></p>
+        </form>
+    </div>
+    <div id="bottom"></div>
 
 
 </body>

@@ -28,31 +28,31 @@
         <!--Object Storage General-->
             <tr>
                 <th>厂商</th>
-                {% for record in ObjectstorageGeneral %}
+                {% for record in Objectstorage %}
                 <th>{{ record.vendor }}</th>
                 {% endfor %}
             </tr>
             <tr>
                 <th>名称</th>
-                {% for record in ObjectstorageGeneral %}
+                {% for record in Objectstorage %}
                 <th>{{ record.product_name }}</th>
                 {% endfor %}
             </tr>
             <tr>
                 <th>软件版本</th>
-                {% for record in ObjectstorageGeneral %}
+                {% for record in Objectstorage %}
                 <td>{{ record.software_version }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>部署选项</th>
-                {% for record in ObjectstorageGeneral %}
+                {% for record in Objectstorage %}
                 <td>{{ record.deployment_option }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>节点类型</th>
-                {% for record in ObjectstorageGeneral %}
+                {% for record in Objectstorage %}
                 <td>{{ record.node_type }}</td>
                 {% endfor %}
             </tr>
@@ -60,31 +60,31 @@
         <!--Object Storage Interface-->
             <tr>
                 <th>S3</th>
-                {% for record in ObjectstorageInterface %}
+                {% for record in Objectstorage %}
                 <td>{{ record.s3 }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>Swift</th>
-                {% for record in ObjectstorageInterface %}
+                {% for record in Objectstorage %}
                 <td>{{ record.swift }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>NFS</th>
-                {% for record in ObjectstorageInterface %}
+                {% for record in Objectstorage %}
                 <td>{{ record.nfs }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>CIFS</th>
-                {% for record in ObjectstorageInterface %}
+                {% for record in Objectstorage %}
                 <td>{{ record.cifs }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>HDFS</th>
-                {% for record in ObjectstorageInterface %}
+                {% for record in Objectstorage %}
                 <td>{{ record.hdfs }}</td>
                 {% endfor %}
             </tr>
@@ -92,43 +92,43 @@
         <!--Object Storage Scalability-->
             <tr>
                 <th>最大容量每集群</th>
-                {% for record in ObjectstorageScalability %}
+                {% for record in Objectstorage %}
                 <td>{{ record.max_capacity_per_cluster }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>最大节点数每集群</th>
-                {% for record in ObjectstorageScalability %}
+                {% for record in Objectstorage %}
                 <td>{{ record.max_nodes_per_cluster }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>最大桶数每集群</th>
-                {% for record in ObjectstorageScalability %}
+                {% for record in Objectstorage %}
                 <td>{{ record.max_buckets_per_cluster }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>最大对象数每集群</th>
-                {% for record in ObjectstorageScalability %}
+                {% for record in Objectstorage %}
                 <td>{{ record.max_objects_per_cluster }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>最大容量每桶</th>
-                {% for record in ObjectstorageScalability %}
+                {% for record in Objectstorage %}
                 <td>{{ record.max_capacity_per_bucket }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>最大对象数每桶</th>
-                {% for record in ObjectstorageScalability %}
+                {% for record in Objectstorage %}
                 <td>{{ record.max_objects_per_bucket }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>最大对象数每节点</th>
-                {% for record in ObjectstorageScalability %}
+                {% for record in Objectstorage %}
                 <td>{{ record.max_objects_per_node }}</td>
                 {% endfor %}
             </tr>
@@ -136,37 +136,37 @@
         <!--Object Storage Data Availability-->
             <tr>
                 <th>纠删码</th>
-                {% for record in ObjectstorageDataAvailability %}
+                {% for record in Objectstorage %}
                 <td>{{ record.erasure_code }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>多份拷贝</th>
-                {% for record in ObjectstorageDataAvailability %}
+                {% for record in Objectstorage %}
                 <td>{{ record.multi_copy }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>磁盘故障</th>
-                {% for record in ObjectstorageDataAvailability %}
+                {% for record in Objectstorage %}
                 <td>{{ record.disk_failure }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>节点故障</th>
-                {% for record in ObjectstorageDataAvailability %}
+                {% for record in Objectstorage %}
                 <td>{{ record.node_failure }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>机柜故障</th>
-                {% for record in ObjectstorageDataAvailability %}
+                {% for record in Objectstorage %}
                 <td>{{ record.rack_failure }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>站点故障</th>
-                {% for record in ObjectstorageDataAvailability %}
+                {% for record in Objectstorage %}
                 <td>{{ record.site_failure }}</td>
                 {% endfor %}
             </tr>
@@ -174,67 +174,67 @@
         <!--Object Storage Data Service-->
             <tr>
                 <th>重删</th>
-                {% for record in ObjectstorageDataService %}
+                {% for record in Objectstorage %}
                 <td>{{ record.dedupe }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>压缩</th>
-                {% for record in ObjectstorageDataService %}
+                {% for record in Objectstorage %}
                 <td>{{ record.compression }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>分层到云</th>
-                {% for record in ObjectstorageDataService %}
+                {% for record in Objectstorage %}
                 <td>{{ record.tiering_to_cloud }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>自动分层</th>
-                {% for record in ObjectstorageDataService %}
+                {% for record in Objectstorage %}
                 <td>{{ record.autotiering }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>WORM</th>
-                {% for record in ObjectstorageDataService %}
+                {% for record in Objectstorage %}
                 <td>{{ record.worm }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>多版本</th>
-                {% for record in ObjectstorageDataService %}
+                {% for record in Objectstorage %}
                 <td>{{ record.versioning }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>元数据搜索</th>
-                {% for record in ObjectstorageDataService %}
+                {% for record in Objectstorage %}
                 <td>{{ record.metadatasearch }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>多站点访问</th>
-                {% for record in ObjectstorageDataService %}
+                {% for record in Objectstorage %}
                 <td>{{ record.multi_sites_access }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>跨接口访问</th>
-                {% for record in ObjectstorageDataService %}
+                {% for record in Objectstorage %}
                 <td>{{ record.cross_interface_access }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>多站点分发</th>
-                {% for record in ObjectstorageDataService %}
+                {% for record in Objectstorage %}
                 <td>{{ record.multi_sites_distribution }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>负载均衡</th>
-                {% for record in ObjectstorageDataService %}
+                {% for record in Objectstorage %}
                 <td>{{ record.access_load_balance }}</td>
                 {% endfor %}
             </tr>
@@ -242,19 +242,19 @@
         <!--Object Storage Access Security-->
             <tr>
                 <th>访问控制列表</th>
-                {% for record in ObjectstorageAccessSecurity %}
+                {% for record in Objectstorage %}
                 <td>{{ record.acl }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>桶策略</th>
-                {% for record in ObjectstorageAccessSecurity %}
+                {% for record in Objectstorage %}
                 <td>{{ record.bucket_policy }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>用户策略</th>
-                {% for record in ObjectstorageAccessSecurity %}
+                {% for record in Objectstorage %}
                 <td>{{ record.user_policy }}</td>
                 {% endfor %}
             </tr>
@@ -262,37 +262,37 @@
         <!--Object Storage Operation-->
             <tr>
                 <th>安装过程</th>
-                {% for record in ObjectstorageOperation %}
+                {% for record in Objectstorage %}
                 <td>{{ record.erasure_code }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>性能监控</th>
-                {% for record in ObjectstorageOperation %}
+                {% for record in Objectstorage %}
                 <td>{{ record.multi_copy }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>容量监控</th>
-                {% for record in ObjectstorageOperation %}
+                {% for record in Objectstorage %}
                 <td>{{ record.disk_failure }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>故障告警</th>
-                {% for record in ObjectstorageOperation %}
+                {% for record in Objectstorage %}
                 <td>{{ record.node_failure }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>审计日志</th>
-                {% for record in ObjectstorageOperation %}
+                {% for record in Objectstorage %}
                 <td>{{ record.rack_failure }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>数据访问日志</th>
-                {% for record in ObjectstorageOperation %}
+                {% for record in Objectstorage %}
                 <td>{{ record.site_failure }}</td>
                 {% endfor %}
             </tr>
@@ -300,25 +300,25 @@
         <!--Object Storage Hardware Spec-->
             <tr>
                 <th>CPU</th>
-                {% for record in ObjectstorageHardwareSpec %}
+                {% for record in Objectstorage %}
                 <td>{{ record.cpu }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>内存</th>
-                {% for record in ObjectstorageHardwareSpec %}
+                {% for record in Objectstorage %}
                 <td>{{ record.memory }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>磁盘</th>
-                {% for record in ObjectstorageHardwareSpec %}
+                {% for record in Objectstorage %}
                 <td>{{ record.disk }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>网络</th>
-                {% for record in ObjectstorageHardwareSpec %}
+                {% for record in Objectstorage %}
                 <td>{{ record.network }}</td>
                 {% endfor %}
             </tr>
@@ -326,19 +326,19 @@
         <!--Object Storage Ecosystem-->
             <tr>
                 <th>Isilon</th>
-                {% for record in ObjectstorageEcosystem %}
+                {% for record in Objectstorage %}
                 <td>{{ record.isilon }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>Datadomain</th>
-                {% for record in ObjectstorageEcosystem %}
+                {% for record in Objectstorage %}
                 <td>{{ record.datadomain }}</td>
                 {% endfor %}
             </tr>
             <tr>
                 <th>NBU</th>
-                {% for record in ObjectstorageEcosystem %}
+                {% for record in Objectstorage %}
                 <td>{{ record.nbu }}</td>
                 {% endfor %}
             </tr>
