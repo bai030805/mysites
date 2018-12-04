@@ -7,26 +7,7 @@ from storagematrix import models
 
 def objectstorage_matrix(request):
     objectstorage = models.Objectstorage.objects.all()
-#    general = models.ObjectstorageGeneral.objects.all()
-#    interface = models.ObjectstorageInterface.objects.all()
-#    scalability = models.ObjectstorageScalability.objects.all()
-#    dataavailability = models.ObjectstorageDataAvailability.objects.all()
-#    dataservice = models.ObjectstorageDataService.objects.all()
-#    accesssecurity = models.ObjectstorageAccessSecurity.objects.all()
-#    ecosystem = models.ObjectstorageEcosystem.objects.all()
-#    operation = models.ObjectstorageOperation.objects.all()
-#    hardwarespec = models.ObjectstorageHardwareSpec.objects.all()
-    return render(request, 'objectstoragematrix.html', {"Objectstorage": objectstorage,
-                                                        #"ObjectstorageGeneral": general,
-                                                        #"ObjectstorageInterface": interface,
-                                                        #"ObjectstorageScalability": scalability,
-                                                        #"ObjectstorageDataAvailability": dataavailability,
-                                                        #"ObjectstorageDataService": dataservice,
-                                                        #"ObjectstorageAccessSecurity": accesssecurity,
-                                                        #"ObjectstorageEcosystem": ecosystem,
-                                                        #"ObjectstorageOperation": operation,
-                                                        #"ObjectstorageHardwarespec": hardwarespec,
-                                                        })
+    return render(request, 'objectstoragematrix.html', {"Objectstorage": objectstorage,})
 
 def objectstorage_add(request):
     if request.method == "POST":
@@ -55,7 +36,7 @@ def objectstorage_add(request):
         max_objects_per_node_added = request.POST.get("max_objects_per_node", None)
 
         #Object Storage Data Availability
-        erasure_code_added = request.POST.get("erasure_cod", None)
+        erasure_code_added = request.POST.get("erasure_code", None)
         multi_copy_added = request.POST.get("multi_copy", None)
         disk_failure_added = request.POST.get("disk_failure", None)
         node_failure_added = request.POST.get("node_failure", None)
@@ -99,17 +80,78 @@ def objectstorage_add(request):
         datadomain_added = request.POST.get("datadomain", None)
         nbu_added = request.POST.get("nbu", None)
 
-        models.Customers.objects.create(
-            customer = customer_added,
-            ase = ase_added,
-            ase_manager = ase_manager_added,
-            dcse = dcse_added,
-            uds_sales = uds_sales_added,
-            sales_division = sales_division_added,
-            sales_team = sales_team_added,
+        models.Objectstorage.objects.create(
+            # Object Storage General
+            product_name=product_name_added,
+            vendor=vendor_added,
+            software_version=software_version_added,
+            release_date=release_date_added,
+            deployment_option=deployment_option_added,
+            node_type=node_type_added,
+
+            # Object Storage Interface
+            s3=s3_added,
+            swift=swift_added,
+            nfs=nfs_added,
+            cifs=cifs_added,
+            hdfs=hdfs_added,
+
+            # Object Storage Scalability
+            max_capacity_per_cluster=max_capacity_per_cluster_added,
+            max_nodes_per_cluster=max_nodes_per_cluster_added,
+            max_buckets_per_cluster=max_buckets_per_cluster_added,
+            max_objects_per_cluster=max_objects_per_cluster_added,
+            max_capacity_per_bucket=max_capacity_per_bucket_added,
+            max_objects_per_bucket=max_objects_per_bucket_added,
+            max_objects_per_node=max_objects_per_node_added,
+
+            # Object Storage Data Availability
+            erasure_code=erasure_code_added,
+            multi_copy=multi_copy_added,
+            disk_failure=disk_failure_added,
+            node_failure=node_failure_added,
+            rack_failure=rack_failure_added,
+            site_failure=site_failure_added,
+
+            # Object Storage Data Service
+            dedupe=dedupe_added,
+            compression=compression_added,
+            tiering_to_cloud=tiering_to_cloud_added,
+            autotiering=autotiering_added,
+            worm=worm_added,
+            versioning=versioning_added,
+            metadatasearch=metadatasearch_added,
+            multi_sites_access=multi_sites_access_added,
+            cross_interface_access=cross_interface_access_added,
+            multi_sites_distribution=multi_sites_distribution_added,
+            access_load_balance=access_load_balance_added,
+
+            # Object Storage Access Security
+            acl=acl_added,
+            bucket_policy=bucket_policy_added,
+            user_policy=user_policy_added,
+
+            # Object Storage Operation
+            installation_procedure=installation_procedure_added,
+            performance_monitoring=performance_monitoring_added,
+            capacity_monitoring=capacity_monitoring_added,
+            alert=alert_added,
+            audit_log=audit_log_added,
+            data_access_log=data_access_log_added,
+
+            # Object Storage Hardware Spec
+            cpu=cpu_added,
+            memory=memory_added,
+            disk=disk_added,
+            network=network_added,
+
+            # Object Storage Ecosystem
+            isilon=isilon_added,
+            datadomain=datadomain_added,
+            nbu=nbu_added,
         )
 
-        return render(request, 'objectstoragematrix.html')
+        return render(request, 'objectstorageadd.html')
     else:
         return render(request, 'objectstorageadd.html')
 
