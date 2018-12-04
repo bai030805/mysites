@@ -21,6 +21,7 @@
             <li><a href="/projecttracking/projectadd/">项目添加</a></li>
             <li><a href="/storagematrix/objectstorage">对象存储比较</a></li>
             <li><a href="/storagematrix/objectstorageadd">对象存储添加</a></li>
+            <li><a href="/storagematrix/objectstorageedit">对象存储编辑</a></li>
         </ul>
     </div>
     <div id="content">
@@ -341,6 +342,14 @@
                 <th>NBU</th>
                 {% for record in Objectstorage %}
                 <td>{{ record.nbu }}</td>
+                {% endfor %}
+            </tr>
+
+        <!--Edit-->
+            <tr>
+                <th>编辑</th>
+                {% for record in Objectstorage %}
+                <td><a href = "/storagematrix/objectstorageedit/?id={{ record.id }}">编辑</a></td>
                 {% endfor %}
             </tr>
 

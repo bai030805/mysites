@@ -7,7 +7,6 @@
     <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
 </head>
 <body>
-
     <div id="top">
         <h1>对象存储添加页</h1>
     </div>
@@ -20,6 +19,7 @@
             <li><a href="/projecttracking/projectadd/">项目添加</a></li>
             <li><a href="/storagematrix/objectstorage">对象存储比较</a></li>
             <li><a href="/storagematrix/objectstorageadd">对象存储添加</a></li>
+            <li><a href="/storagematrix/objectstorageedit">对象存储编辑</a></li>
         </ul>
     </div>
     <div id="content">
@@ -34,7 +34,7 @@
             <p><span>节点类型</span><input id="node_type" type="text" name="node_type" /></p>
 
         <!--Object Storage Interface-->
-            <p><span>S3</span><input id="s3" type="text" name="s3"  required /></p>
+            <p><span>S3</span><input id="s3" type="text" name="s3"  /></p>
             <p><span>Swift</span><input id="swift" type="text" name="swift"  /></p>
             <p><span>NFS</span><input id="nfs" type="text" name="nfs" /></p>
             <p><span>CIFS</span><input id="cifs" type="text" name="cifs"  /></p>

@@ -155,3 +155,150 @@ def objectstorage_add(request):
     else:
         return render(request, 'objectstorageadd.html')
 
+
+def objectstorage_edit(request):
+    requested_id = request.GET.get("id")
+    if request.method == "POST":
+        #Object Storage General
+        product_name_updated = request.POST.get("product_name", None)
+        vendor_updated = request.POST.get("vendor", None)
+        software_version_updated = request.POST.get("software_version", None)
+        release_date_updated = request.POST.get("release_date", None)
+        deployment_option_updated = request.POST.get("deployment_option", None)
+        node_type_updated = request.POST.get("node_type", None)
+
+        #Object Storage Interface
+        s3_updated = request.POST.get("s3", None)
+        swift_updated = request.POST.get("swift", None)
+        nfs_updated = request.POST.get("nfs", None)
+        cifs_updated = request.POST.get("cifs", None)
+        hdfs_updated = request.POST.get("hdfs", None)
+
+        #Object Storage Scalability
+        max_capacity_per_cluster_updated = request.POST.get("max_capacity_per_cluster", None)
+        max_nodes_per_cluster_updated = request.POST.get("max_nodes_per_cluster", None)
+        max_buckets_per_cluster_updated = request.POST.get("max_buckets_per_cluster", None)
+        max_objects_per_cluster_updated = request.POST.get("max_objects_per_cluster", None)
+        max_capacity_per_bucket_updated = request.POST.get("max_capacity_per_bucket", None)
+        max_objects_per_bucket_updated = request.POST.get("max_objects_per_bucket", None)
+        max_objects_per_node_updated = request.POST.get("max_objects_per_node", None)
+
+        #Object Storage Data Availability
+        erasure_code_updated = request.POST.get("erasure_code", None)
+        multi_copy_updated = request.POST.get("multi_copy", None)
+        disk_failure_updated = request.POST.get("disk_failure", None)
+        node_failure_updated = request.POST.get("node_failure", None)
+        rack_failure_updated = request.POST.get("rack_failure", None)
+        site_failure_updated = request.POST.get("site_failure", None)
+
+        #Object Storage Data Service
+        dedupe_updated = request.POST.get("dedupe", None)
+        compression_updated = request.POST.get("compression", None)
+        tiering_to_cloud_updated = request.POST.get("tiering_to_cloud", None)
+        autotiering_updated = request.POST.get("autotiering", None)
+        worm_updated = request.POST.get("worm", None)
+        versioning_updated = request.POST.get("versioning", None)
+        metadatasearch_updated = request.POST.get("metadatasearch", None)
+        multi_sites_access_updated = request.POST.get("multi_sites_access", None)
+        cross_interface_access_updated = request.POST.get("cross_interface_access", None)
+        multi_sites_distribution_updated = request.POST.get("multi_sites_distribution", None)
+        access_load_balance_updated = request.POST.get("access_load_balance", None)
+
+        #Object Storage Access Security
+        acl_updated = request.POST.get("acl", None)
+        bucket_policy_updated = request.POST.get("bucket_policy", None)
+        user_policy_updated = request.POST.get("user_policy", None)
+
+        #Object Storage Operation
+        installation_procedure_updated = request.POST.get("installation_procedure", None)
+        performance_monitoring_updated = request.POST.get("performance_monitoring", None)
+        capacity_monitoring_updated = request.POST.get("capacity_monitoring", None)
+        alert_updated = request.POST.get("alert", None)
+        audit_log_updated = request.POST.get("audit_log", None)
+        data_access_log_updated = request.POST.get("data_access_log", None)
+
+        #Object Storage Hardware Spec
+        cpu_updated = request.POST.get("cpu", None)
+        memory_updated = request.POST.get("memory", None)
+        disk_updated = request.POST.get("disk", None)
+        network_updated = request.POST.get("network", None)
+
+        #Object Storage Ecosystem
+        isilon_updated = request.POST.get("isilon", None)
+        datadomain_updated = request.POST.get("datadomain", None)
+        nbu_updated = request.POST.get("nbu", None)
+
+        models.Objectstorage.objects.filter(id=requested_id).update(
+            # Object Storage General
+            product_name=product_name_updated,
+            vendor=vendor_updated,
+            software_version=software_version_updated,
+            release_date=release_date_updated,
+            deployment_option=deployment_option_updated,
+            node_type=node_type_updated,
+
+            # Object Storage Interface
+            s3=s3_updated,
+            swift=swift_updated,
+            nfs=nfs_updated,
+            cifs=cifs_updated,
+            hdfs=hdfs_updated,
+
+            # Object Storage Scalability
+            max_capacity_per_cluster=max_capacity_per_cluster_updated,
+            max_nodes_per_cluster=max_nodes_per_cluster_updated,
+            max_buckets_per_cluster=max_buckets_per_cluster_updated,
+            max_objects_per_cluster=max_objects_per_cluster_updated,
+            max_capacity_per_bucket=max_capacity_per_bucket_updated,
+            max_objects_per_bucket=max_objects_per_bucket_updated,
+            max_objects_per_node=max_objects_per_node_updated,
+
+            # Object Storage Data Availability
+            erasure_code=erasure_code_updated,
+            multi_copy=multi_copy_updated,
+            disk_failure=disk_failure_updated,
+            node_failure=node_failure_updated,
+            rack_failure=rack_failure_updated,
+            site_failure=site_failure_updated,
+
+            # Object Storage Data Service
+            dedupe=dedupe_updated,
+            compression=compression_updated,
+            tiering_to_cloud=tiering_to_cloud_updated,
+            autotiering=autotiering_updated,
+            worm=worm_updated,
+            versioning=versioning_updated,
+            metadatasearch=metadatasearch_updated,
+            multi_sites_access=multi_sites_access_updated,
+            cross_interface_access=cross_interface_access_updated,
+            multi_sites_distribution=multi_sites_distribution_updated,
+            access_load_balance=access_load_balance_updated,
+
+            # Object Storage Access Security
+            acl=acl_updated,
+            bucket_policy=bucket_policy_updated,
+            user_policy=user_policy_updated,
+
+            # Object Storage Operation
+            installation_procedure=installation_procedure_updated,
+            performance_monitoring=performance_monitoring_updated,
+            capacity_monitoring=capacity_monitoring_updated,
+            alert=alert_updated,
+            audit_log=audit_log_updated,
+            data_access_log=data_access_log_updated,
+
+            # Object Storage Hardware Spec
+            cpu=cpu_updated,
+            memory=memory_updated,
+            disk=disk_updated,
+            network=network_updated,
+
+            # Object Storage Ecosystem
+            isilon=isilon_updated,
+            datadomain=datadomain_updated,
+            nbu=nbu_updated,
+        )
+        return redirect("/storagematrix/objectstorage/")
+    else:
+        objectstorage = models.Objectstorage.objects.get(id=requested_id)
+        return render(request, 'objectstorageedit.html', {"record":objectstorage})

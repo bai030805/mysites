@@ -4,4 +4,5 @@ from . import views
 urlpatterns = [
     path('objectstorage/', views.objectstorage_matrix),
     path('objectstorageadd/', views.objectstorage_add),
+    path('objectstorageedit/', views.objectstorage_edit),
 ]

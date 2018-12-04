@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象存储编辑页</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+</head>
+<body>
+    <div id="top">
+        <h1>对象存储添加页1</h1>
+    </div>
+    <div id="menu">
+        <ul>
+            <li><a href="/">主页</a></li>
+            <li><a href="/projecttracking/customerlist/">客户列表</a></li>
+            <li><a href="/projecttracking/customeradd/">客户添加</a></li>
+            <li><a href="/projecttracking/projectlist/">项目列表</a></li>
+            <li><a href="/projecttracking/projectadd/">项目添加</a></li>
+            <li><a href="/storagematrix/objectstorage">对象存储比较</a></li>
+            <li><a href="/storagematrix/objectstorageadd">对象存储添加</a></li>
+            <li><a href="/storagematrix/objectstorageedit">对象存储编辑</a></li>
+        </ul>
+    </div>
+    <div id="content">
+
+        {{ record.id }}
+        <form action="/storagematrix/objectstorageedit/?id={{ record.id }}" method="POST">
+
+        <!--Object Storage General-->
+            <p><span>名称</span><input id="product_name" type="text" name="product_name"  value="{{ record.product_name }}"  /></p>
+            <p><span>厂商</span><input id="vendor" type="text" name="vendor"  value="{{ record.vendor }}"  /></p>
+            <p><span>软件版本</span><input id="software_version" type="text" name="software_version" value="{{ record.software_version }}" /></p>
+            <p><span>发布时间</span><input id="release_date" type="text" name="release_date" value="{{ record.release_date }}" /></p>
+            <p><span>部署选项</span><input id="deployment_option" type="text" name="deployment_option"  value="{{ record.deployment_option }}" /></p>
+            <p><span>节点类型</span><input id="node_type" type="text" name="node_type" value="{{ record.node_type }}"/></p>
+
+        <!--Object Storage Interface-->
+            <p><span>S3</span><input id="s3" type="text" name="s3"  required value="{{ record.s3 }}" /></p>
+            <p><span>Swift</span><input id="swift" type="text" name="swift"  value="{{ record.swift }}" /></p>
+            <p><span>NFS</span><input id="nfs" type="text" name="nfs" value="{{ record.nfs }}" /></p>
+            <p><span>CIFS</span><input id="cifs" type="text" name="cifs"  value="{{ record.cifs }}" /></p>
+            <p><span>HDFS</span><input id="hdfs" type="text" name="hdfs" value="{{ record.hdfs }}" /></p>
+
+        <!--Object Storage Scalability-->
+            <p><span>最大容量每集群</span><input id="max_capacity_per_cluster" type="text" name="max_capacity_per_cluster"  value="{{ record.max_capacity_per_cluster }}"  /></p>
+            <p><span>最大节点数每集群</span><input id="max_nodes_per_cluster" type="text" name="max_nodes_per_cluster"  value="{{ record.max_nodes_per_cluster }}"  /></p>
+            <p><span>最大桶数每集群</span><input id="max_buckets_per_cluster" type="text" name="max_buckets_per_cluster" value="{{ record.max_buckets_per_cluster }}" /></p>
+            <p><span>最大对象数每集群</span><input id="max_objects_per_cluster" type="text" name="max_objects_per_cluster" value="{{ record.max_objects_per_cluster }}"  /></p>
+            <p><span>最大容量每桶</span><input id="max_capacity_per_bucket" type="text" name="max_capacity_per_bucket" value="{{ record.max_capacity_per_bucket }}" /></p>
+            <p><span>最大对象数每桶</span><input id="max_objects_per_bucket" type="text" name="max_objects_per_bucket" value="{{ record.ax_objects_per_bucket }}" /></p>
+            <p><span>最大对象数每节点</span><input id="max_objects_per_node" type="text" name="max_objects_per_node" value="{{ record.max_objects_per_node }}" /></p>
+
+        <!--Object Storage Data Availability-->
+            <p><span>纠删码</span><input id="erasure_code" type="text" name="erasure_code"   value="{{ record.erasure_code }}" /></p>
+            <p><span>多份拷贝</span><input id="multi_copy" type="text" name="multi_copy"  value="{{ record.multi_copy }}" /></p>
+            <p><span>磁盘故障</span><input id="disk_failure" type="text" name="disk_failure" value="{{ record.disk_failure }}" /></p>
+            <p><span>节点故障</span><input id="node_failure" type="text" name="node_failure" value="{{ record.node_failure }}" /></p>
+            <p><span>机柜故障</span><input id="rack_failure" type="text" name="rack_failure" value="{{ record.rack_failure }}" ></p>
+            <p><span>站点故障</span><input id="site_failure" type="text" name="site_failure"  value="{{ record.site_failure }}" /></p>
+
+        <!--Object Storage Data Service-->
+            <p><span>重删</span><input id="dedupe" type="text" name="dedupe"   value="{{ record.dedupe }}" /></p>
+            <p><span>压缩</span><input id="compression" type="text" name="compression"  value="{{ record.compression }}" /></p>
+            <p><span>分层到云</span><input id="tiering_to_cloud" type="text" name="tiering_to_cloud" value="{{ record.tiering_to_cloud }}" /></p>
+            <p><span>自动分层</span><input id="autotiering" type="text" name="autotiering"  value="{{ record.autotiering }}" /></p>
+            <p><span>WORM</span><input id="worm" type="text" name="worm" value="{{ record.worm }}" /></p>
+            <p><span>多版本</span><input id="versioning" type="text" name="versioning"  value="{{ record.versioning }}" /></p>
+            <p><span>元数据搜索</span><input id="metadatasearch" type="text" name="metadatasearch"  value="{{ record.metadatasearch }}" /></p>
+            <p><span>多站点访问</span><input id="multi_sites_access" type="text" name="multi_sites_access"  value="{{ record.multi_sites_access }}" /></p>
+            <p><span>跨接口访问</span><input id="cross_interface_access" type="text" name="cross_interface_access" value="{{ record.cross_interface_access }}" /></p>
+            <p><span>多站点分发</span><input id="multi_sites_distribution" type="text" name="multi_sites_distribution"  value="{{ record.multi_sites_distribution }}" /></p>
+            <p><span>负载均衡</span><input id="access_load_balance" type="text" name="access_load_balance" value="{{ record.access_load_balance }}"/></p>
+
+        <!--Object Storage Access Security-->
+            <p><span>访问控制列表</span><input id="acl" type="text" name="acl" value="{{ record.acl }}" /></p>
+            <p><span>桶策略</span><input id="bucket_polic" type="text" name="bucket_policy" value="{{ record.bucket_policy }}" /></p>
+            <p><span>用户策略</span><input id="user_policy" type="text" name="user_policy" value="{{ record.user_policy }}" /></p>
+
+        <!--Object Storage Operation-->
+            <p><span>安装过程</span><input id="installation_procedure" type="text" name="installation_procedure"  value="{{ record.installation_procedure }}" /></p>
+            <p><span>性能监控</span><input id="performance_monitoring" type="text" name="performance_monitoring"  value="{{ record.performance_monitoring }}"  /></p>
+            <p><span>容量监控</span><input id="capacity_monitoring" type="text" name="capacity_monitoring"  value="{{ record.capacity_monitoring }}" /></p>
+            <p><span>故障告警</span><input id="alert" type="text" name="alert" value="{{ record.alert }}" /></p>
+            <p><span>审计日志</span><input id="audit_log" type="text" name="audit_log" value="{{ record.audit_log }}"  /></p>
+            <p><span>数据访问日志</span><input id="data_access_log" type="text" name="data_access_log" value="{{ record.data_access_log }}" /></p>
+
+        <!--Object Storage Hardware Spec-->
+            <p><span>CPU</span><input id="cpu" type="text" name="cpu"  value="{{ record.cpu }}" /></p>
+            <p><span>内存</span><input id="memory" type="text" name="memory"  value="{{ record.memory }}" /></p>
+            <p><span>磁盘</span><input id="disk" type="text" name="disk"  value="{{ record.disk }}" /></p>
+            <p><span>网络</span><input id="network" type="text" name="network" value="{{ record.network }}" /></p>
+
+        <!--Object Storage Ecosystem-->
+            <p><span>Isilon</span><input id="isilon" type="text" name="isilon"  value="{{ record.isilon }}" /></p>
+            <p><span>Datadomain</span><input id="datadomain" type="text" name="datadomain"  value="{{ record.datadomain }}" /></p>
+            <p><span>NBU</span><input id="nbu" type="text" name="nbu"  value="{{ record.nbu }}" /></p>
+
+            <p><input type="submit" value="更新"></p>
+        </form>
+    </div>
+    <div id="bottom"></div>
+
+
+
+</body>
+</html>
