@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>对象存储编辑页</title>
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'storagematrix/css/style.css' %}">
 </head>
 <body>
     <div id="top">
@@ -33,7 +33,7 @@
             <p><span>节点类型</span><input id="node_type" type="text" name="node_type" value="{{ record.node_type }}"/></p>
 
         <!--Object Storage Interface-->
-            <p><span>S3</span><input id="s3" type="text" name="s3"  required value="{{ record.s3 }}" /></p>
+            <p><span>S3</span><input id="s3" type="text" name="s3"   value="{{ record.s3 }}" /></p>
             <p><span>Swift</span><input id="swift" type="text" name="swift"  value="{{ record.swift }}" /></p>
             <p><span>NFS</span><input id="nfs" type="text" name="nfs" value="{{ record.nfs }}" /></p>
             <p><span>CIFS</span><input id="cifs" type="text" name="cifs"  value="{{ record.cifs }}" /></p>
@@ -78,7 +78,7 @@
             <p><span>安装过程</span><input id="installation_procedure" type="text" name="installation_procedure"  value="{{ record.installation_procedure }}" /></p>
             <p><span>性能监控</span><input id="performance_monitoring" type="text" name="performance_monitoring"  value="{{ record.performance_monitoring }}"  /></p>
             <p><span>容量监控</span><input id="capacity_monitoring" type="text" name="capacity_monitoring"  value="{{ record.capacity_monitoring }}" /></p>
-            <p><span>故障告警</span><input id="alert" type="text" name="alert" value="{{ record.alert }}" /></p>
+            <p><span>告警</span><input id="alert" type="text" name="alert" value="{{ record.alert }}" /></p>
             <p><span>审计日志</span><input id="audit_log" type="text" name="audit_log" value="{{ record.audit_log }}"  /></p>
             <p><span>数据访问日志</span><input id="data_access_log" type="text" name="data_access_log" value="{{ record.data_access_log }}" /></p>
 
@@ -97,8 +97,6 @@
         </form>
     </div>
     <div id="bottom"></div>
-
-
 
 </body>
 </html>
