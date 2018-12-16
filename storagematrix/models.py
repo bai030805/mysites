@@ -72,7 +72,8 @@ class Objectstorage(models.Model):
     #ObjectstorageEcosystem
     isilon = models.CharField(max_length=64, null=True, unique=False)
     datadomain = models.CharField(max_length=64, null=True, unique=False)
-    nbu = models.CharField(max_length=64, null=True, unique=False)
+    netbackup = models.CharField(max_length=64, null=True, unique=False)
+    enterprisevault = models.CharField(max_length=64, null=True, unique=False)
 
 
 

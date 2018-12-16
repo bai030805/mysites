@@ -5069,22 +5069,27 @@ model</ColNames>
       <DataType>varchar(64)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="1142" parent="354" name="nbu">
+    <column id="1142" parent="354" name="netbackup">
       <Position>52</Position>
       <DataType>varchar(64)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="1143" parent="354" name="product_name">
+    <column id="1143" parent="354" name="enterprisevault">
+      <Position>53</Position>
+      <DataType>varchar(64)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="1144" parent="354" name="product_name">
       <ColNames>product_name</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="1144" parent="354" name="PRIMARY">
+    <key id="1145" parent="354" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="1145" parent="354" name="product_name">
+    <key id="1146" parent="354" name="product_name">
       <ColNames>product_name</ColNames>
       <UnderlyingIndexName>product_name</UnderlyingIndexName>
     </key>

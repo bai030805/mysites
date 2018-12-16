@@ -326,24 +326,29 @@
 
         <!--Object Storage Ecosystem-->
             <tr>
-                <th>Isilon</th>
+                <th>DELL EMC Isilon</th>
                 {% for record in Objectstorage %}
                 <td>{{ record.isilon |linebreaksbr}}</td>
                 {% endfor %}
             </tr>
             <tr>
-                <th>Datadomain</th>
+                <th>DELL EMC DataDomain</th>
                 {% for record in Objectstorage %}
                 <td>{{ record.datadomain |linebreaksbr}}</td>
                 {% endfor %}
             </tr>
             <tr>
-                <th>NBU</th>
+                <th>Veritas NetBackup</th>
                 {% for record in Objectstorage %}
-                <td>{{ record.nbu |linebreaksbr}}</td>
+                <td>{{ record.netbackup |linebreaksbr}}</td>
                 {% endfor %}
             </tr>
-
+            <tr>
+                <th>Veritas Enterprise Vault</th>
+                {% for record in Objectstorage %}
+                <td>{{ record.enterprisevault |linebreaksbr}}</td>
+                {% endfor %}
+            </tr>
         <!--Edit-->
             <tr>
                 <th>编辑</th>

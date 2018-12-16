@@ -78,7 +78,8 @@ def objectstorage_add(request):
         #Object Storage Ecosystem
         isilon_added = request.POST.get("isilon", None)
         datadomain_added = request.POST.get("datadomain", None)
-        nbu_added = request.POST.get("nbu", None)
+        netbackup_added = request.POST.get("netbackup", None)
+        enterprisevault_added = request.POST.get("enterprisevault", None)
 
         models.Objectstorage.objects.create(
             # Object Storage General
@@ -148,7 +149,8 @@ def objectstorage_add(request):
             # Object Storage Ecosystem
             isilon=isilon_added,
             datadomain=datadomain_added,
-            nbu=nbu_added,
+            netbackup=netbackup_added,
+            enterprisevault=enterprisevault_added,
         )
 
         return render(request, 'objectstorageadd.html')
@@ -226,7 +228,8 @@ def objectstorage_edit(request):
         #Object Storage Ecosystem
         isilon_updated = request.POST.get("isilon", None)
         datadomain_updated = request.POST.get("datadomain", None)
-        nbu_updated = request.POST.get("nbu", None)
+        netbackup_updated = request.POST.get("netbackup", None)
+        enterprisevault_updated = request.POST.get("enterprisevault", None)
 
         models.Objectstorage.objects.filter(id=requested_id).update(
             # Object Storage General
@@ -296,7 +299,8 @@ def objectstorage_edit(request):
             # Object Storage Ecosystem
             isilon=isilon_updated,
             datadomain=datadomain_updated,
-            nbu=nbu_updated,
+            netbackup=netbackup_updated,
+            enterprisevault=enterprisevault_updated,
         )
         return redirect("/storagematrix/objectstorage/")
     else:
